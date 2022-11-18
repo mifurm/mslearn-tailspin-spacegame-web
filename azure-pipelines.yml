@@ -98,6 +98,6 @@ stages:
             inputs:
               appType: webAppLinux
               ConnectedServiceName: 'Resource Manager - Tailspin - Space Game'
-              DeploymentType: zipDeploy
+              DeploymentType: webDeploy
               WebAppName: '$(WebAppName)'
               packageForLinux: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
