@@ -97,7 +97,7 @@ stages:
             displayName: 'Azure App Service Deploy: website'
             inputs:
               appType: webAppLinux
-              ConnectedServiceName: Resource Manager - Tailspin - Space Game'
+              ConnectedServiceName: 'Resource Manager - Tailspin - Space Game'
               DeploymentType: zipDeploy
               WebAppName: '$(WebAppName)'
               packageForLinux: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
