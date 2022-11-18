@@ -86,10 +86,17 @@ stages:
           steps:
           - download: current
             artifact: drop
-          - task: AzureWebApp@1
+          # - task: AzureWebApp@1
+          #   displayName: 'Azure App Service Deploy: website'
+          #   inputs:
+          #     appType: webAppLinux
+          #     azureSubscription: 'Resource Manager - Tailspin - Space Game'
+          #     appName: '$(WebAppName)'
+          #     package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+          - task: AzureRmWebAppDeployment@4
             displayName: 'Azure App Service Deploy: website'
             inputs:
               appType: webAppLinux
-              azureSubscription: 'Resource Manager - Tailspin - Space Game'
-              appName: '$(WebAppName)'
-              package: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+              DeploymentType: zipDeploy
+              WebAppName: '$(WebAppName)'
+              packageForLinux: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
