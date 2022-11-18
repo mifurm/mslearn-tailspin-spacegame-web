@@ -100,4 +100,6 @@ stages:
               ConnectedServiceName: 'Resource Manager - Tailspin - Space Game'
               DeploymentType: webDeploy
               WebAppName: '$(WebAppName)'
-              packageForLinux: '$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+              packageForLinux: '/home/vsts/work/1/drop/Release/Tailspin.SpaceGame.Web.zip'
+                #'$(Pipeline.Workspace)/drop/$(buildConfiguration)/*.zip'
+              
